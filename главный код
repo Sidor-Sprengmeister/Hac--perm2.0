@@ -1,0 +1,8 @@
+#Устанавливаем библиотеку для работы с git
+!pip install git+https://github.com/FractalGPT/RuNer -q
+from RuNerLib.QANER import RuNerQA
+path = 'AlexKay/xlm-roberta-large-qa-multilingual-finedtuned-ru'
+ner = RuNerQA(path)
+#Поле для воода файлов input
+text = "В Великом Новгороде прошел чемпионат по настольному теннису"
+ner.NerDetection(['человек','спорт', 'город', 'формула'], text)
